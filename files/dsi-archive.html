@@ -1,0 +1,109 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<!-- Mirrored from gavff.dev/dsi-archive by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Nov 2026 10:26:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=240">
+<title>DSi Archive</title>
+<style type="text/css">
+body { margin: 0; width: 240px; font-family: sans-serif; }
+#top_screen { width: 240px; height: 176px; overflow: hidden; }
+#intro { padding: 4px; }
+#logo { display: block; }
+#intro p { margin: 4px 0 0; font-size: 11px; line-height: 12px; }
+#bottom_screen { width: 240px; }
+#links { padding: 4px; }
+h2 { margin: 0 0 4px; font-size: 12px; line-height: 16px; }
+ul { margin: 0; padding-left: 18px; font-size: 12px; line-height: 17px; }
+.link_page { margin-bottom: 8px; }
+#pager { display: none; font-size: 12px; line-height: 20px; }
+.paged #bottom_screen { height: 176px; overflow: hidden; }
+.paged .link_page { height: 142px; margin-bottom: 0; }
+.paged #pager { display: block; }
+#page_number { margin: 0 12px; }
+</style>
+</head>
+<body>
+<div id="top_screen">
+<div id="intro">
+</div>
+</div>
+<div id="bottom_screen">
+<div id="links">
+<div class="link_page" id="link_page_0">
+<h2>Archived</h2>
+<ul>
+<li><a href="dsi-archive/DSiCade/TouchMii/index.html">Touch Mii</a></li>
+<li><a href="dsi-archive/DSiCade/WarGames/index.html">WarGames</a></li>
+<li><a href="dsi-archive/DSiCade/WackyTap/index.html">WackyTap</a></li>
+<li><a href="dsi-archive/DSiCade/DSiCalc/index.html">DSiCalc</a></li>
+<li><a href="dsi-archive/DSiCade/Phong/index.html">Phong</a></li>
+<li><a href="dsi-archive/DSiCade/Subdivide/index.html">Subdivide (partial)</a></li>
+</ul>
+</div>
+<div class="link_page" id="link_page_1">
+<h2>Archived</h2>
+<ul>
+<li><a href="dsi-archive/DSiCade/Farg/index.html">Farg (partial)</a></li>
+<li><a href="dsi-archive/DSiCade/MysticalBall/index.html">Mystical Ball</a></li>
+<li><a href="dsi-archive/Home4DSi/Blackjack/index.html">Blackjack</a></li>
+<li><a href="dsi-archive/Meisingset/index.html">DS Browser Games (Meisingset)</a></li>
+<li><a href="dsi-archive/DSiTube/index.html">DSiTube</a></li>
+</ul>
+</div>
+<div class="link_page" id="link_page_2">
+<h2>Archived</h2>
+<ul>
+<li><a href="dsi-archive/DSi2Play/tic-tac-toe.html">Tic-Tac-Toe</a></li>
+<li><a href="dsi-archive/DSi2Play/mindreader.html">Mind Reader</a></li>
+<li><a href="dsi-archive/DSi2Play/fortune.html">Fortune Teller</a></li>
+<li><a href="dsi-archive/DSi2Play/day.html">Date and Clock</a></li>
+<li><a href="dsi-archive/DSi2Play/pika.html">Adopt a Pikachu</a></li>
+</ul>
+</div>
+<div class="link_page" id="link_page_3">
+<h2>Archived</h2>
+<ul>
+<li><a href="dsi-archive/DSi2Play/snake.html">Snake (beta)</a></li>
+<li><a href="dsi-archive/Home4DSi/checkboxes.html">Checkboxes</a></li>
+</ul>
+</div>
+<div class="link_page" id="link_page_4">
+<h2>Off-site (online as of Nov 6th, 2026)</h2>
+<ul>
+<li><a href="http://www.dsipaint.com/">DSiPaint</a></li>
+<li><a href="http://home4dsi.com/copypaste.html">Copy/Paste</a></li>
+<li><a href="http://home4dsi.com/characterlimitextender/">Input Character Limit Extender</a></li>
+</ul>
+</div>
+<div id="pager">
+<a href="#links" onclick="showPage(archivePage - 1); return false;">Previous</a><span id="page_number">1 / 5</span><a href="#links" onclick="showPage(archivePage + 1); return false;">Next</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var archivePage = 0;
+function showPage(page) {
+    var pageCount = 0;
+    while (document.getElementById("link_page_" + pageCount)) pageCount++;
+    archivePage = (page + pageCount) % pageCount;
+    for (var i = 0; i < pageCount; i++) {
+        document.getElementById("link_page_" + i).style.display = i == archivePage ? "block" : "none";
+    }
+    document.getElementById("page_number").innerHTML = (archivePage + 1) + " / " + pageCount;
+}
+window.onload = function () {
+    document.body.className = "paged";
+    showPage(0);
+    if (navigator.userAgent.indexOf("Nintendo DSi") != -1) {
+        document.body.scrollTop = 176;
+        window.scrollTo(0, 176);
+    }
+};
+</script>
+</body>
+
+<!-- Mirrored from gavff.dev/dsi-archive by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Nov 2026 10:26:57 GMT -->
+</html>

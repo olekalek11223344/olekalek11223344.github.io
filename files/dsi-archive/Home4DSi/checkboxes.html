@@ -1,0 +1,107 @@
+<html>
+<!-- Mirrored from gavff.dev/dsi-archive/Home4DSi/checkboxes.htm by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Nov 2026 10:27:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head></script><meta name="viewport"content="width=240"><title>Home4DSi - Checkboxes</title><style>body{margin:0px;}#topscreen,#bottomscreen{width:240px;height:176px;overflow:hidden;}</style></head>
+
+<body></body>
+<p align="center">try to check as much boxes as you can in 20 seconds!</p>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--//do not copy
+// assign initial values to global variables
+var total = 0
+var play = false
+// react to a click in a checkbox (element == clicked checkbox object)
+function display(element) {     
+        // assign instance of Date object representing current time     
+                var now = new Date()    
+        // if the game has not started yet      
+                if (!play) {            
+        // game starts now              
+                play = true             
+        // milliseconds since 1970 for time at beginning                
+                startTime = now.getTime()       
+        }       
+        // if more than 20 seconds have passed since startTime was last set     
+                if (now.getTime() - startTime > 20000) {                
+                        // reject modification (make "read-only")               
+                                element.checked = !element.checked              
+                        // terminate function           
+                        return  
+                }       
+        // if the clicked checkbox is now checked       
+                if (element.checked)            
+                        // increment total              
+                                total++
+                else            
+                        // decrement total              
+                                total-- 
+                        // display total in text object 
+                                element.form.num.value = total
+}
+function restart(form) {        
+        // set global variables back to initial values  
+                total = 0       
+                play = false    
+        // uncheck all 100 checkboxes   
+                for (var i = 1; i <= 100; ++i) {                
+                        // uncheck current checkbox             
+                                form.elements[i].checked = false        
+                }
+}
+// -->
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<LEFT>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--// immediate script (executed before the other script because it is deferred)
+        document.write("<FORM><CENTER>")
+        document.write('<INPUT TYPE="text" VALUE="0" NAME="num" SIZE=10 onFocus="this.blur()"><BR>')
+        document.write("<HR SIZE=1 WIDTH=40%>")
+// use loop to create a 10 x 10 square of checkboxes
+        for (var i = 0; i < 10; ++i) {  
+                for (var j = 0; j < 10; ++j) {          
+                        // write checkbox with "display(this)" as event handler script          
+                                document.write('<INPUT TYPE="checkbox" onClick="display(this)">')       
+                }       
+                document.write("<BR>")
+        }
+        document.write("<HR SIZE=1 WIDTH=40%>")
+        // create button to call restart function to restart game
+                document.write('<INPUT TYPE="button" VALUE="restart" onClick="restart(this.form)">')
+                document.write("</CENTER></FORM>")
+// -->
+
+</SCRIPT>
+</LEFT>
+<P>
+</BODY>
+
+<p align="center"><a href="http://home4dsi.webs.com/games.htm">Click here to go back to the games index</a></p>
+
+<p align="center"><font color="#FFFFFF" size="2">.</font></p>
+<p align="center"><font color="#FFFFFF" size="2">.</font></p>
+<p align="center"><!-- Freewebs Sticker -->
+</p>
+
+
+
+<script>document.body.scrollTop=176;</script></body>
+<!-- Mirrored from gavff.dev/dsi-archive/Home4DSi/checkboxes.htm by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Nov 2026 10:27:11 GMT -->
+</html>
+
+
+
+
+
+
+
+
+
+

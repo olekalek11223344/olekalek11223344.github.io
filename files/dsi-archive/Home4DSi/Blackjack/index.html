@@ -1,0 +1,193 @@
+<noscript></noscript><!----><noscript></noscript><!-- --><noscript></noscript><!-- --><html>
+<!-- Mirrored from gavff.dev/dsi-archive/Home4DSi/Blackjack/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Nov 2026 10:27:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head></script><meta name="viewport"content="width=240"><title>Home4DSi - Blackjack</title><style>body{margin:0px;}#topscreen,#bottomscreen{width:240px;height:176px;overflow:hidden;}</style>
+<script type="text/javascript">
+//Dit deel kan evengoed in een .js opgenomen worden
+
+/*
+Dit script is geschreven in 2005 door Grubolsch.
+Dit script is vrij te gebruiken, zolang dit commenaarstukje volledig blijft.
+Voor meer leuks, kijk ook eens op http://www.grubolsch.ssr.be/
+Voor fouten te melden, gelieve naar grubolsch BIJ gmail PUNT com te berichten.
+*/
+
+window.onload = IniButtons;
+
+function IniButtons()
+{
+	SpelerTotaal = 0;
+	PcTotaal = 0;
+	SpelerGestopt = false;
+	PcGestopt = false;
+	document.getElementById("verder").onclick = SpelerSpeelt;
+	document.getElementById("stop").onclick = SpelerStopt;
+	document.getElementById("verder").value = "get a new card";
+	document.getElementById("stop").value = "pass";
+	document.getElementById("nieuw").onclick= IniButtons;
+}
+
+function BepaalWaardeKaart()
+{
+	var getal = Math.round(Math.random()*100);
+	if ((getal > 13) || (getal == 0))
+	{
+		return BepaalWaardeKaart();
+	}
+	else
+	{
+		return getal;	
+	}	
+}
+
+function SpelerStopt()
+{
+	alert("You decided to stop with a total ammount of "+SpelerTotaal);	
+	SpelerGestopt = true;
+	if (!PcGestopt)
+		PcSpeelt();
+	else
+	{
+		if (KijkNaarWinnaars())
+		{
+			return EindeSpel();
+		}	
+	}
+}
+
+function SpelerSpeelt()
+{
+	if (KijkNaarWinnaars())
+	{
+		return EindeSpel();
+	}
+
+	var kaart = BepaalWaardeKaart();
+
+	switch(kaart)
+	{
+		case 1: alert("You got an aas"); break;
+		case 11: alert("You got an jack"); break;
+		case 12: alert("You got an queen"); break;
+		case 13: alert("U got a king"); break;
+		default: alert("You got a "+kaart);
+	}
+
+	SpelerTotaal += kaart;
+	
+	if (21 < SpelerTotaal)
+	{
+		alert("Your total ammount is now "+SpelerTotaal+". That's more than 21, so you lose.");
+		alert("Your DSi won");
+		EindeSpel();
+	}
+	else
+	{
+		alert("Your total ammount is now "+SpelerTotaal);
+		if (!PcGestopt)
+			PcSpeelt();
+	}
+}
+
+function PcSpeelt()
+{
+	if (BerekenVolgendeZet())
+	{
+		var kaart = BepaalWaardeKaart();
+		PcTotaal += kaart;
+	
+		if (21 < PcTotaal)
+		{
+			alert("Your DSi got more than 21, you win! Congratulations!");
+			return EindeSpel();
+		}
+		else
+		{
+			alert("Your DSi got a card.");
+			
+			if (SpelerGestopt)
+			{
+				return PcSpeelt();
+			}
+		}
+	}	
+	else
+	{
+		alert("Your DSi passes!");
+		PcGestopt = true;
+		if (SpelerGestopt)
+			return KijkNaarWinnaars();
+	}	
+}
+
+function BerekenVolgendeZet()
+{
+	if (PcTotaal+13 > 21)
+	{
+		var KansBerekening = (21-PcTotaal)*5;
+
+		if (KansBerekening < Math.round(Math.random()*100))
+			return false;
+	}	
+	return true;
+}
+
+function KijkNaarWinnaars()
+{
+	if((SpelerGestopt) && (PcGestopt))
+	{
+		if (PcTotaal > SpelerTotaal)
+			alert("You lose! Your DSi had "+ PcTotaal +" points, and you had just "+SpelerTotaal);
+		else if (PcTotaal < SpelerTotaal)
+			alert("You won! Your DSi had just "+ PcTotaal +" points, and you had "+SpelerTotaal+"! Congratulations!");
+		else
+			alert("There's no winner! You and your DSi have both"+SpelerTotaal+" points. This game has ended, without a winner."); 
+		return true;
+	} 
+	return false;
+}
+
+function EindeSpel()
+{
+	document.getElementById("verder").onclick = function() {};
+	document.getElementById("stop").onclick = function() {};
+	document.getElementById("verder").value = "Press 'start new game'";
+	document.getElementById("stop").value = "Press 'start new game'";
+}
+</script>
+</head>
+</head>
+<body><div id="topscreen"><IMG src="logo.png"></div><div id="bottomscreen"><p align="center">Blackjack</p>
+<!--Begin Spel-->
+<noscript><p>Dit spel vereist JavaScript om te spelen!</p></noscript>
+<form>
+<input type="button" value="Nieuwe kaart trekken" id="verder">
+<input type="button" value="Stoppen" id="stop">
+<br>
+<input type="button" value="Start new game" id="nieuw">
+</form>
+<!--Einde Spel-->
+</body>
+<p align="center"><a href="http://home4dsi.webs.com/games.htm">Go back to the game index</a></p>
+<p align="center"><a href="http://home4dsi.webs.com/menu.htm">Go back to the Home4DSi menu</a></p>
+
+<script>document.body.scrollTop=176;</script>
+</body>
+<!-- Mirrored from gavff.dev/dsi-archive/Home4DSi/Blackjack/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Nov 2026 10:27:07 GMT -->
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

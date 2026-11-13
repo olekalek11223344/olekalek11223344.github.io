@@ -1,0 +1,100 @@
+
+<html>
+  
+<!-- Mirrored from gavff.dev/dsi-archive/DSi2Play/day.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Nov 2026 10:27:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta name="viewport" content="width=240">
+    <style>
+      body { margin: 0px; }
+      #topscreen, #bottomscreen { width: 240px; height: 176px; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <div id="topscreen"><IMG src="interface-ds.png"></div>
+    <div id="bottomscreen">
+<HEAD>
+
+
+</HEAD>
+<BODY>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+<!-- Original:  Andy Angrick/Mike Barone -->
+<!-- Web Site:  http://www.cgiscript.net/datetoday.htm -->
+<!-- Begin
+// Get today's current date.
+var now = new Date();
+
+// Array list of days.
+var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+
+// Array list of months.
+var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+
+// Calculate the number of the current day in the week.
+var date = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+
+// Calculate four digit year.
+function fourdigits(number)	{
+	return (number < 1000) ? number + 1900 : number;
+								}
+
+// Join it all together
+today =  days[now.getDay()] + ", " +
+              months[now.getMonth()] + " " +
+               date + ", " +
+                (fourdigits(now.getYear())) ;
+
+// Print out the data.
+document.write("" +today+ ".");
+//  End -->
+</script>
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+var timerID = null;
+var timerRunning = false;
+function stopclock (){
+if(timerRunning)
+clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime () {
+var now = new Date();
+var hours = now.getHours();
+var minutes = now.getMinutes();
+var seconds = now.getSeconds()
+var timeValue = "" + ((hours >12) ? hours -12 :hours)
+if (timeValue == "0") timeValue = 12;
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+timeValue += (hours >= 12) ? " P.M." : " A.M."
+document.clock.face.value = timeValue;
+timerID = setTimeout("showtime()",1000);
+timerRunning = true;
+}
+function startclock() {
+stopclock();
+showtime();
+}
+// End -->
+</SCRIPT>
+<BODY><BODY onLoad="startclock()">
+<CENTER>
+<FORM name="clock">
+<input type="text" name="face" size=13 value="">
+</FORM>
+</CENTER>
+</div>
+ <script>document.body.scrollTop = 176;</script><!-- -->   </body>
+
+<!-- Mirrored from gavff.dev/dsi-archive/DSi2Play/day.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Nov 2026 10:27:10 GMT -->
+</html>
